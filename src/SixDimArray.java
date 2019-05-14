@@ -4,8 +4,10 @@
 import java.util.Arrays;
 
 public class SixDimArray {
+
+    private static final int[][][][][][] array = new int[2][2][2][2][2][2];
+
     public static void main(String[] args) {
-        int[][][][][][] array = new int[2][2][2][2][2][2];
         int var = 1;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {

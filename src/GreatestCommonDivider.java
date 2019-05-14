@@ -1,25 +1,21 @@
 
-
 import java.util.Scanner;
 
 public class GreatestCommonDivider {
 
-        public static void main(String[] args) {
-            Scanner in = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
 
-            int a = in.nextInt();
-            int b = in.nextInt();
+        int fistInputNum = in.nextInt();
+        int secondInputNum = in.nextInt();
 
-            while (a!=0 && b!=0) {
-                if (a > b) {
-                    a = a % b;
-                }
-                else  {
-                    b = b % a;
-                }
+        while (fistInputNum != 0 && secondInputNum != 0) {
+            if (fistInputNum > secondInputNum) {
+                fistInputNum %= secondInputNum;
+            } else {
+                secondInputNum %= fistInputNum;
             }
-            System.out.println(a+b);
         }
+        System.out.println(fistInputNum + secondInputNum);
+    }
 }
-
-

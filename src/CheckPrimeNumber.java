@@ -5,24 +5,21 @@ import java.util.Scanner;
 
 public class CheckPrimeNumber {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        int a;
-        Scanner scn=new Scanner(System.in);
+        int inputNum;
+        Scanner scn = new Scanner(System.in);
 
-        if(scn.hasNextInt()){
-
-            a=scn.nextInt();
-
-            for(int i=(int)Math.sqrt(a);i>=1;i--){
-                if(a%i==0&i!=1){
-                    System.out.println("Заданное число не простое");
-                    break;
+        if (scn.hasNextInt()) {
+            inputNum = scn.nextInt();
+            for (int i = (int) Math.sqrt(inputNum); i >= 1; i--) {
+                if (i == 1 || inputNum % i == 1) {
+                    System.out.println("The given number is simple");
                 }
-                if(i==1) System.out.println("Заданное число простое");
+                if (inputNum % i == 0 && i != 1)
+                    System.out.println("The given number is not simple");
+                break;
             }
-        }
-        else System.out.println("Ошибка. Введено не число");
-
+        } else System.out.println("Mistake. No number entered");
     }
 }

@@ -8,15 +8,18 @@ public class SumOfDigits {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        int inputNumber = in.nextInt();
+        System.out.println(SumInpuNum(inputNumber));
 
-        int n = in.nextInt();
+    }
+
+    public static int SumInpuNum(int inputNumber) {
         int sum = 0;
+        while (inputNumber != 0) {
+            sum += (inputNumber % 10);
+            inputNumber /= 10;
 
-        while(n != 0){
-
-            sum += (n % 10);
-            n/=10;
         }
-        System.out.println(sum + " ");
+        return sum;
     }
 }

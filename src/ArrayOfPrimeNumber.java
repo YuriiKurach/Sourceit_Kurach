@@ -4,25 +4,28 @@
 import java.util.Arrays;
 
 public class ArrayOfPrimeNumber {
+
+    private final static  int[] myArray = new int[100];
+
     public static void main(String[] args) {
-        int a = 100;
-        int[] myArray = new int[a];
         int nextNumber = 2;
         int counter = 0;
         boolean isSimple;
-        while (counter < a) {
+
+        while (counter < 100) {
             int i = 0;
             isSimple = true;
-            while (isSimple && i <counter){
+            while (i<counter){
                 if (nextNumber % myArray[i] == 0) {
                     isSimple = false;
+                    break;
                 }
                 i++;
             }
             if (isSimple) {
                 myArray[counter] = nextNumber;
                 counter++;
-                nextNumber++;
+
             } else {
                 nextNumber++;
             }
@@ -30,4 +33,5 @@ public class ArrayOfPrimeNumber {
         System.out.print(Arrays.toString(myArray));
     }
 }
+
 
